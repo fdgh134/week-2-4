@@ -1,10 +1,17 @@
 // Action Value
 const ADD_NUMBER = "ADD_NUMBER";
+const MINUS_NUMBER = "MINUS_NUMBER";
 
 // Action Creator
 export const addNumber = (payload) => {
   return {
     type: ADD_NUMBER,
+    payload: payload,
+  };
+};
+export const minusNumber = (payload) => {
+  return {
+    type: MINUS_NUMBER,
     payload: payload,
   };
 };
@@ -21,6 +28,10 @@ const counter = (state = initialState, action) => {
       return {
 				// state.number (기존의 nubmer)에 action.paylaod(유저가 더하길 원하는 값)을 더한다.
         number: state.number + action.payload,
+      };
+    case MINUS_NUMBER:
+      return {
+        number: state.number - action.payload,
       };
     default:
       return state;
