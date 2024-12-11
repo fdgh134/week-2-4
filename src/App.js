@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { addNumber, minusNumber } from "./redux/modules/counter";
+import Router from "./shared/Router";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,8 @@ const App = () => {
       <input type="number" onChange={onChangeHandler} />
       <button onClick={onClickAddNumberHandler}>더하기</button>
       <button onClick={onClickMinusNumberHandler}>빼기</button>
+      <br/>
+      <Router />
     </div>
   );
 };
